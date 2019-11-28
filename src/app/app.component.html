@@ -1,0 +1,9 @@
+
+  <div class="nav">
+    <app-navbar></app-navbar>
+  </div>
+  <div class="container ">
+    <div class="router-container" [@router] ="myComp.activatedRouteData['index']">
+        <router-outlet #myComp="outlet"></router-outlet>
+    </div>
+  </div>

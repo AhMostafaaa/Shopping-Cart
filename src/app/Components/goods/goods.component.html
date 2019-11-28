@@ -1,0 +1,10 @@
+<div >
+    <h2 class="text-center">Add New Good</h2>
+    <form #f="ngForm" (ngSubmit)="addNewGood(f)">
+      <input type="text" class="form-control" name="name" placeholder="Name" ngModel required>
+      <input type="number" class="form-control" name="price" placeholder="Price" ngModel required>
+      <input type="file" name="image" ngModel #image required> <br><br>
+      <input type="submit" value="add" class="btn btn-primary" [disabled]="f.invalid">
+    </form>
+</div>
+

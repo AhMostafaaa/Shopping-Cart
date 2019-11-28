@@ -1,0 +1,21 @@
+<div class="Goods mt-5 ">
+    <div class="m-auto" >
+        <input class="form-control mb-5 text-center" [(ngModel)] = "term" placeholder="Search For What you want"/>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" *ngFor="let good of goods|shop:term; index as i">
+          <div class="card mb-5">
+            <img [src]="good.photoUrl" class="card-img-top img-fluid" [alt]="good.name">
+             <div class="card-body">
+                <h5 class="card-title">{{good.name | titlecase}}</h5>
+                <p class="card-text">{{good.price |currency}}</p>
+                <button  class="btn btn-primary" (click)="addToCart(i)" *ngIf="add !== i" >Add To Cart</button>
+                <div *ngIf = "add === i ">
+                  <input type="number" class="form-control mb-4" placeholder="Quantity" #amount>
+                  <button class="btn btn-primary"(click)="buy(amount.value)">Order Now</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+</div>
